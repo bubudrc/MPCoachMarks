@@ -1,9 +1,10 @@
 # MPCoachMarks
+
+<p align="center"><img src ="http://zippy.gfycat.com/VigorousAcceptableJenny.gif" /></p>
+
 MPCoachMarks is an iOS class that displays user coach marks with a couple of shapescutout over an existing UI. This approach leverages your actual UI as part of the onboarding process for your user.
 
 Based on the greats project [WSCoachMarksView](https://github.com/workshirt/WSCoachMarksView) and [DDCoachMarks](https://github.com/ddoria921/DDCoachMarks]) I created this repo to maintance the coach mark projects with the idea to improve the existing project and add some extra functionalities based on each fork and issue for the old proyects.
-
-//Images
 
 ## Requirements
 
