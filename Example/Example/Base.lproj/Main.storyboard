@@ -27,7 +27,8 @@
                                 <rect key="frame" x="160" y="204" width="280" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.60392156860000001" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="jIw-BC-Rck"/>
+                                    <constraint firstAttribute="width" constant="280" id="qUw-WS-azZ"/>
+                                    <constraint firstAttribute="height" constant="50" id="ufD-kp-QCE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Button">
@@ -39,7 +40,7 @@
                                 <rect key="frame" x="0.0" y="289" width="600" height="311"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="UD6-2S-IJH">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MarksCell" id="UD6-2S-IJH">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UD6-2S-IJH" id="1Lu-VA-IA7">
@@ -52,15 +53,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="K7s-F4-ies" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="74B-nY-eHq"/>
-                            <constraint firstAttribute="trailing" secondItem="D6t-Jq-DQf" secondAttribute="trailing" constant="160" id="7SC-MF-wrJ"/>
-                            <constraint firstItem="K7s-F4-ies" firstAttribute="top" secondItem="D6t-Jq-DQf" secondAttribute="bottom" constant="35" id="EeS-pb-cXi"/>
+                            <constraint firstItem="D6t-Jq-DQf" firstAttribute="top" secondItem="dz5-BC-TWP" secondAttribute="bottom" constant="35" id="CJK-FO-eaw"/>
+                            <constraint firstItem="K7s-F4-ies" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="JdR-MF-bH6"/>
                             <constraint firstItem="dz5-BC-TWP" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="NDf-E8-F0y"/>
-                            <constraint firstItem="D6t-Jq-DQf" firstAttribute="top" secondItem="dz5-BC-TWP" secondAttribute="bottom" constant="35" id="UCA-e1-aes"/>
-                            <constraint firstAttribute="trailing" secondItem="K7s-F4-ies" secondAttribute="trailing" id="bSu-o5-heg"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="K7s-F4-ies" secondAttribute="bottom" id="ddV-ih-Xer"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="K7s-F4-ies" secondAttribute="bottom" id="PrN-BD-hvN"/>
+                            <constraint firstAttribute="centerX" secondItem="D6t-Jq-DQf" secondAttribute="centerX" id="RRj-6R-S6A"/>
+                            <constraint firstAttribute="trailing" secondItem="K7s-F4-ies" secondAttribute="trailing" id="ZGP-eY-fFW"/>
+                            <constraint firstItem="K7s-F4-ies" firstAttribute="top" secondItem="D6t-Jq-DQf" secondAttribute="bottom" constant="35" id="dx7-gQ-aXv"/>
                             <constraint firstAttribute="centerX" secondItem="dz5-BC-TWP" secondAttribute="centerX" constant="-0.5" id="jBB-or-vwP"/>
-                            <constraint firstItem="D6t-Jq-DQf" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="160" id="sOl-nw-Whu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="MPCoachMarks" id="Rh0-ux-C4q">
