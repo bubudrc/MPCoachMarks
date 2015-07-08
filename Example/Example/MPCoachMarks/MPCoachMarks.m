@@ -10,7 +10,7 @@
 #import "MPCoachMarks.h"
 
 static const CGFloat kAnimationDuration = 0.3f;
-static const CGFloat kCutoutRadius = 2.0f;
+static const CGFloat kCutoutRadius = 5.0f;
 static const CGFloat kMaxLblWidth = 230.0f;
 static const CGFloat kLblSpacing = 35.0f;
 static const BOOL kEnableContinueLabel = YES;

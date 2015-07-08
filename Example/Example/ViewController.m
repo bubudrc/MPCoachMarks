@@ -42,7 +42,7 @@
                             @{
                                 @"rect": [NSValue valueWithCGRect:coachmark3],
                                 @"caption": @"And works with navigations buttons too",
-                                @"shape": @"rect"
+                                @"shape": @"square"
                                 }
                             ];
     
