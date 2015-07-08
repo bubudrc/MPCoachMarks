@@ -15,6 +15,9 @@
 		8DD7C8E71B4DD7F6006764EF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7C8E51B4DD7F6006764EF /* LaunchScreen.xib */; };
 		8DD7C8F31B4DD7F6006764EF /* ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD7C8F21B4DD7F6006764EF /* ExampleTests.m */; };
 		8DD7C8FF1B4DD88A006764EF /* MPCoachMarks.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD7C8FE1B4DD88A006764EF /* MPCoachMarks.m */; };
+		8DD7C9011B4DDA18006764EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD7C9001B4DDA18006764EF /* Foundation.framework */; };
+		8DD7C9031B4DDA1D006764EF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD7C9021B4DDA1D006764EF /* QuartzCore.framework */; };
+		8DD7C9051B4DDA2A006764EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD7C9041B4DDA2A006764EF /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,9 @@
 		8DD7C8F21B4DD7F6006764EF /* ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTests.m; sourceTree = "<group>"; };
 		8DD7C8FD1B4DD88A006764EF /* MPCoachMarks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPCoachMarks.h; path = MPCoachMarks/MPCoachMarks.h; sourceTree = "<group>"; };
 		8DD7C8FE1B4DD88A006764EF /* MPCoachMarks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPCoachMarks.m; path = MPCoachMarks/MPCoachMarks.m; sourceTree = "<group>"; };
+		8DD7C9001B4DDA18006764EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8DD7C9021B4DDA1D006764EF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8DD7C9041B4DDA2A006764EF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +56,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DD7C9051B4DDA2A006764EF /* UIKit.framework in Frameworks */,
+				8DD7C9031B4DDA1D006764EF /* QuartzCore.framework in Frameworks */,
+				8DD7C9011B4DDA18006764EF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +78,7 @@
 				8DD7C8D51B4DD7F6006764EF /* Example */,
 				8DD7C8EF1B4DD7F6006764EF /* ExampleTests */,
 				8DD7C8D41B4DD7F6006764EF /* Products */,
+				8DD7C9061B4DDBD3006764EF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +140,16 @@
 				8DD7C8FE1B4DD88A006764EF /* MPCoachMarks.m */,
 			);
 			name = MPCoachMarks;
+			sourceTree = "<group>";
+		};
+		8DD7C9061B4DDBD3006764EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8DD7C9041B4DDA2A006764EF /* UIKit.framework */,
+				8DD7C9021B4DDA1D006764EF /* QuartzCore.framework */,
+				8DD7C9001B4DDA18006764EF /* Foundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -57,7 +57,7 @@
 
 @end
 
-@protocol WSCoachMarksViewDelegate <NSObject>
+@protocol MPCoachMarksViewDelegate <NSObject>
 
 @optional
 - (void)coachMarksView:(MPCoachMarks *)coachMarksView willNavigateToIndex:(NSUInteger)index;
