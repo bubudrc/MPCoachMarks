@@ -113,7 +113,7 @@ Modify the coach marks.
 
 ### `shape` (NSString)
 
-You can use 3 differents types of shape: @"circle", @"squere" or empty (Square with borders rounded it's default)
+You can use 3 differents types of shape: @"circle", @"square" or empty (Square with borders rounded it's default)
 
 ### `lblCaption` (UILabel)
 
