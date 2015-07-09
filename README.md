@@ -24,11 +24,11 @@ MPCoachMarks works on any iOS version and is built with ARC. It depends on the f
 
 ### Source files
 
-Alternatively, you can directly add the 'MPCoachMarks.h' and 'MPCoachMarks.m' source files to your project.
+Alternatively, you can directly add the `MPCoachMarks.h` and `MPCoachMarks.m` source files to your project.
 
 1. Download the [latest code version](https://github.com/bubudrc/MPCoachMarks/archive/master.zip) or add the repository as a git submodule to your git-tracked project.
-2. Open your project in Xcode, than drag and drop 'MPCoachMarks.h' and 'MPCoachMarks.m' onto your project (use the "Product Navigator view"). Make sure to select Copy items when asked if you extracted the code archive outside of your project.
-3. Include MPCoachMarks wherever you need it with '#import "MPCoachMarks.h"'.
+2. Open your project in Xcode, than drag and drop `MPCoachMarks.h` and `MPCoachMarks.m` onto your project (use the "Product Navigator view"). Make sure to select Copy items when asked if you extracted the code archive outside of your project.
+3. Include MPCoachMarks wherever you need it with `#import "MPCoachMarks.h"`.
 
 ## Usage
 
