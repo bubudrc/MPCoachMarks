@@ -19,8 +19,6 @@ static const BOOL kEnableSkipButton = YES;
 @implementation MPCoachMarks {
     CAShapeLayer *mask;
     NSUInteger markIndex;
-    UILabel *lblContinue;
-    UIButton *btnSkipCoach;
 }
 
 #pragma mark - Properties
@@ -28,6 +26,8 @@ static const BOOL kEnableSkipButton = YES;
 @synthesize delegate;
 @synthesize coachMarks;
 @synthesize lblCaption;
+@synthesize lblContinue;
+@synthesize btnSkipCoach;
 @synthesize maskColor = _maskColor;
 @synthesize animationDuration;
 @synthesize cutoutRadius;

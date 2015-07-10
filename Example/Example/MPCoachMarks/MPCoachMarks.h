@@ -42,9 +42,11 @@
 @interface MPCoachMarks : UIView
 
 @property (nonatomic, MP_WEAK) id<MPCoachMarksViewDelegate> delegate;
-@property (nonatomic, retain) NSArray *coachMarks;
-@property (nonatomic, retain) UILabel *lblCaption;
-@property (nonatomic, retain) UIColor *maskColor;
+@property (nonatomic, strong) NSArray *coachMarks;
+@property (nonatomic, strong) UILabel *lblCaption;
+@property (nonatomic, strong) UIColor *maskColor;
+@property (nonatomic, strong) UILabel *lblContinue;
+@property (nonatomic, strong) UIButton *btnSkipCoach;
 @property (nonatomic) CGFloat animationDuration;
 @property (nonatomic) CGFloat cutoutRadius;
 @property (nonatomic) CGFloat maxLblWidth;
