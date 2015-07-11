@@ -50,8 +50,11 @@ Create a new MPCoachMarks instance in your viewDidLoad method and pass in an arr
                             @{
                                 @"rect": [NSValue valueWithCGRect:coachmark1],
                                 @"caption": @"You can put marks over images",
-                                @"shape": @"circle"
-                                },
+                                @"shape": [NSNumber numberWithInteger:SHAPE_CIRCLE],
+                                @"position":[NSNumber numberWithInteger:LABEL_POSITION_BOTTOM],
+                                @"alignment":[NSNumber numberWithInteger:LABEL_ALIGNMENT_RIGHT],
+                                @"showArrow":[NSNumber numberWithBool:YES]
+                            },
                             @{
                                 @"rect": [NSValue valueWithCGRect:coachmark2],
                                 @"caption": @"Also, we can show buttons"
@@ -59,9 +62,10 @@ Create a new MPCoachMarks instance in your viewDidLoad method and pass in an arr
                             @{
                                 @"rect": [NSValue valueWithCGRect:coachmark3],
                                 @"caption": @"And works with navigations buttons too",
-                                @"shape": @"square"
+                                @"shape": [NSNumber numberWithInteger:SHAPE_SQUARE],
                                 }
                             ];
+
                             
 	MPCoachMarks *coachMarksView = [[MPCoachMarks alloc] initWithFrame:self.view.bounds coachMarks:coachMarks];
 	[self.view addSubview:coachMarksView];
@@ -111,13 +115,48 @@ Example of how to show the coach marks to your user only once (assumes `coachMar
 
 Modify the coach marks.
 
-### `shape` (NSString)
+### `shape` (MaskShape)
 
-You can use 3 differents types of shape: @"circle", @"square" or empty (Square with borders rounded it's default)
+You can use 3 differents types of shape: 
+* DEFAULT (or empty)
+* SHAPE_CIRCLE
+* SHAPE_SQUARE 
+(Square with borders rounded it's DEFAULT)
+
+### `position` (LabelAligment)
+
+You can use 5 differents position of caption label: 
+* LABEL_POSITION_BOTTOM (or empty)
+* LABEL_POSITION_LEFT
+* LABEL_POSITION_TOP
+* LABEL_POSITION_RIGHT
+* LABEL_POSITION_RIGHT_BOTTOM
+(LABEL_POSITION_BOTTOM it's default)
+
+### `alignment` (LabelAligment)
+
+You can use 3 differents types of shape: 
+* LABEL_ALIGNMENT_CENTER (or empty)
+* LABEL_ALIGNMENT_LEFT
+* LABEL_ALIGNMENT_RIGHT
+(LABEL_ALIGNMENT_CENTER it's default)
+
+### `showArrow` (BOOL)
+
+You can show or hide arrow image
+(By default it's set NO)
 
 ### `lblCaption` (UILabel)
 
 Access the captions label.
+
+### `lblContinue` (UILabel)
+
+Access the continues label.
+
+### `btnSkipCoach` (UIButton)
+
+Access the skip button.
 
 ### `maskColor` (UIColor)
 
