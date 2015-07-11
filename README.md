@@ -190,7 +190,7 @@ Define how far the captions label appears above or below the cutout (default: 35
 Set te position of 'continue label'. 
 
 You can use 3 differents position:
-* LOCATION_TOP (or empty)
+* LOCATION_TOP
 * LOCATION_CENTER
 * LOCATION_BOTTOM
 
