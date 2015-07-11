@@ -233,10 +233,12 @@ static const BOOL kEnableSkipButton = YES;
         [self addSubview:currentView];
     }
     
-    BOOL showArrow = YES;
-    if( [markDef objectForKey:@"showArrow"]) {
+    
+    
+    [self.arrowImage removeFromSuperview];
+    BOOL showArrow = NO;
+    if( [markDef objectForKey:@"showArrow"])
         showArrow = [[markDef objectForKey:@"showArrow"] boolValue];
-    }
     
     // Delegate (coachMarksView:willNavigateTo:atIndex:)
     if ([self.delegate respondsToSelector:@selector(coachMarksView:willNavigateToIndex:)]) {
@@ -250,7 +252,9 @@ static const BOOL kEnableSkipButton = YES;
     [self.lblCaption sizeToFit];
     CGFloat y;
     CGFloat x;
-    [self.arrowImage removeFromSuperview];
+    
+    
+    //Label Aligment and Position
     switch (labelAlignment) {
         case LABEL_ALIGNMENT_RIGHT:
             x = floorf(self.bounds.size.width - self.lblCaption.frame.size.width - kLabelMargin);
@@ -283,7 +287,7 @@ static const BOOL kEnableSkipButton = YES;
             y = markRect.origin.y + markRect.size.height/2 - self.lblCaption.frame.size.height/2;
             x = self.bounds.size.width - self.lblCaption.frame.size.width - kLabelMargin - markRect.size.width;
             if(showArrow) {
-                self.arrowImage= [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow-right"]];
+                self.arrowImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow-right"]];
                 CGRect imageViewFrame = self.arrowImage.frame;
                 imageViewFrame.origin.x = self.bounds.size.width - self.arrowImage.frame.size.width - kLabelMargin - markRect.size.width;
                 imageViewFrame.origin.y = y + self.lblCaption.frame.size.height/2 - imageViewFrame.size.height/2;
@@ -311,7 +315,7 @@ static const BOOL kEnableSkipButton = YES;
             }
             x = markRect.origin.x + markRect.size.width + kLabelMargin;
             if(showArrow) {
-                self.arrowImage= [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow-top"]];
+                self.arrowImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow-top"]];
                 CGRect imageViewFrame = self.arrowImage.frame;
                 imageViewFrame.origin.x = x - markRect.size.width/2 - imageViewFrame.size.width/2;
                 imageViewFrame.origin.y = y - kLabelMargin; //self.lblCaption.frame.size.height/2
