@@ -245,10 +245,6 @@ static const BOOL kEnableSkipButton = YES;
     if( [markDef objectForKey:@"showArrow"])
         showArrow = [[markDef objectForKey:@"showArrow"] boolValue];
     
-    // Delegate (coachMarksView:willNavigateTo:atIndex:)
-    if ([self.delegate respondsToSelector:@selector(coachMarksView:willNavigateToIndex:)]) {
-        [self.delegate coachMarksView:self willNavigateToIndex:markIndex];
-    }
     
     // Calculate the caption position and size
     self.lblCaption.alpha = 0.0f;
@@ -355,6 +351,11 @@ static const BOOL kEnableSkipButton = YES;
     [UIView animateWithDuration:0.3f animations:^{
         self.lblCaption.alpha = 1.0f;
     }];
+    
+    // Delegate (coachMarksView:willNavigateTo:atIndex:)
+    if ([self.delegate respondsToSelector:@selector(coachMarksView:willNavigateToIndex:)]) {
+        [self.delegate coachMarksView:self willNavigateToIndex:markIndex];
+    }
     
     // If first mark, set the cutout to the center of first mark
     if (markIndex == 0) {
