@@ -33,7 +33,7 @@
                             @{
                                 @"rect": [NSValue valueWithCGRect:coachmark1],
                                 @"caption": @"You can put marks over images",
-                                @"shape": @"circle",
+                                @"shape": [NSNumber numberWithInteger:SHAPE_CIRCLE],
                                 @"position":[NSNumber numberWithInteger:LABEL_POSITION_BOTTOM],
                                 @"alignment":[NSNumber numberWithInteger:LABEL_ALIGNMENT_RIGHT],
                                 @"showArrow":[NSNumber numberWithBool:YES]
@@ -45,7 +45,7 @@
                             @{
                                 @"rect": [NSValue valueWithCGRect:coachmark3],
                                 @"caption": @"And works with navigations buttons too",
-                                @"shape": @"square"
+                                @"shape": [NSNumber numberWithInteger:SHAPE_SQUARE],
                                 }
                             ];
     

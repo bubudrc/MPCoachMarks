@@ -107,14 +107,14 @@ static const BOOL kEnableSkipButton = YES;
 
 #pragma mark - Cutout modify
 
-- (void)setCutoutToRect:(CGRect)rect withShape:(NSString *)shape{
+- (void)setCutoutToRect:(CGRect)rect withShape:(MaskShape)shape{
     // Define shape
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRect:self.bounds];
     UIBezierPath *cutoutPath;
     
-    if ([shape isEqualToString:@"circle"])
+    if (shape == SHAPE_CIRCLE)
         cutoutPath = [UIBezierPath bezierPathWithOvalInRect:rect];
-    else if ([shape isEqualToString:@"square"])
+    else if (shape == SHAPE_SQUARE)
         cutoutPath = [UIBezierPath bezierPathWithRect:rect];
     else
         cutoutPath = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:self.cutoutRadius];
@@ -126,14 +126,14 @@ static const BOOL kEnableSkipButton = YES;
     mask.path = maskPath.CGPath;
 }
 
-- (void)animateCutoutToRect:(CGRect)rect withShape:(NSString *)shape{
+- (void)animateCutoutToRect:(CGRect)rect withShape:(MaskShape)shape{
     // Define shape
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRect:self.bounds];
     UIBezierPath *cutoutPath;
     
-    if ([shape isEqualToString:@"circle"])
+    if (shape == SHAPE_CIRCLE)
         cutoutPath = [UIBezierPath bezierPathWithOvalInRect:rect];
-    else if ([shape isEqualToString:@"square"])
+    else if (shape == SHAPE_SQUARE)
         cutoutPath = [UIBezierPath bezierPathWithRect:rect];
     else
         cutoutPath = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:self.cutoutRadius];
@@ -208,9 +208,9 @@ static const BOOL kEnableSkipButton = YES;
     NSString *markCaption = [markDef objectForKey:@"caption"];
     CGRect markRect = [[markDef objectForKey:@"rect"] CGRectValue];
     
-    NSString *shape = @"default";
+    MaskShape shape = DEFAULT;
     if([[markDef allKeys] containsObject:@"shape"])
-        shape = [markDef objectForKey:@"shape"];
+        shape = [[markDef objectForKey:@"shape"] integerValue];
     
     
     //Label Position

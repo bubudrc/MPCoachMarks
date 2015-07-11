@@ -38,6 +38,11 @@
 #endif
 
 
+typedef NS_ENUM(NSInteger, MaskShape) {
+    DEFAULT,
+    SHAPE_CIRCLE,
+    SHAPE_SQUARE,
+};
 
 typedef NS_ENUM(NSInteger, LabelAligment) {
     LABEL_ALIGNMENT_CENTER,
