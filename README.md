@@ -1,6 +1,6 @@
 # MPCoachMarks
 
-<p align="center"><img src ="http://zippy.gfycat.com/VigorousAcceptableJenny.gif" /></p>
+<p align="center"><img src ="http://zippy.gfycat.com/DefiantTastyDogwoodtwigborer.gif" /></p>
 
 MPCoachMarks is an iOS class that displays user coach marks with a couple of shapescutout over an existing UI. This approach leverages your actual UI as part of the onboarding process for your user.
 
