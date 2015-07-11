@@ -24,3 +24,34 @@ DerivedData
 # http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
 #
 #Pods/
+
+
+#####
+# OS X temporary files that should never be committed
+
+.DS_Store
+*.swp
+*.lock
+profile
+
+
+####
+# Xcode temporary files that should never be committed
+#
+# NB: NIB/XIB files still exist even on Storyboard projects, so we want this...
+
+*~.nib
+
+
+####
+# Xcode build files -
+#
+# NB: slash on the end, so we only remove the FOLDER, not any files that were badly named "DerivedDa$
+
+DerivedData/
+
+# NB: slash on the end, so we only remove the FOLDER, not any files that were badly named "build"
+
+build/
+
+
