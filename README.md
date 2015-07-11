@@ -185,6 +185,10 @@ Define how far the captions label appears above or below the cutout (default: 35
 
 'Tap to continue' label pops up by default to guide the user at the first coach mark (default: YES).
 
+### `continueLocation` (ContinueLocation)
+
+Set te position of 'continue label'. (default: LOCATION_BOTTOM).
+
 ## MPCoachMarksViewDelegate
 
 If you'd like to take a certain action when a specific coach mark comes into view, your view controller can implement the MPCoachMarksViewDelegate.
