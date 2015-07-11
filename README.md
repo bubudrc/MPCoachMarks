@@ -187,7 +187,14 @@ Define how far the captions label appears above or below the cutout (default: 35
 
 ### `continueLocation` (ContinueLocation)
 
-Set te position of 'continue label'. (default: LOCATION_BOTTOM).
+Set te position of 'continue label'. 
+
+You can use 3 differents position:
+* LOCATION_TOP (or empty)
+* LOCATION_CENTER
+* LOCATION_BOTTOM
+
+_(LOCATION_BOTTOM it's default)_
 
 ## MPCoachMarksViewDelegate
 
@@ -209,6 +216,7 @@ If you'd like to take a certain action when a specific coach mark comes into vie
 - `- (void)coachMarksView:(MPCoachMarksView*)coachMarksView didNavigateToIndex:(NSUInteger)index`
 - `- (void)coachMarksViewWillCleanup:(MPCoachMarksView*)coachMarksView`
 - `- (void)coachMarksViewDidCleanup:(MPCoachMarksView*)coachMarksView`
+- `- (void)coachMarksViewDidClicked:(MPCoachMarks *)coachMarksView atIndex:(NSInteger)index`
 
 ## License
 
