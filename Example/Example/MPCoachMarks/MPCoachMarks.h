@@ -58,6 +58,12 @@ typedef NS_ENUM(NSInteger, LabelPosition) {
     LABEL_POSITION_RIGHT_BOTTOM
 };
 
+typedef NS_ENUM(NSInteger, ContinueLocation) {
+    LOCATION_TOP,
+    LOCATION_CENTER,
+    LOCATION_BOTTOM,
+};
+
 @protocol MPCoachMarksViewDelegate;
 
 @interface MPCoachMarks : UIView
@@ -74,6 +80,7 @@ typedef NS_ENUM(NSInteger, LabelPosition) {
 @property (nonatomic) CGFloat lblSpacing;
 @property (nonatomic) BOOL enableContinueLabel;
 @property (nonatomic) BOOL enableSkipButton;
+@property (nonatomic) ContinueLocation continueLocation;
 @property (nonatomic, strong) UIImageView *arrowImage;
 
 - (id)initWithFrame:(CGRect)frame coachMarks:(NSArray *)marks;
