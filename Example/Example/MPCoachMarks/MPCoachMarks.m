@@ -214,8 +214,8 @@ static const BOOL kEnableSkipButton = YES;
     
     
     //Label Position
-    WS_LABEL_ALIGNMENT labelAlignment = [[markDef objectForKey:@"alignment"] integerValue];
-    WS_LABEL_POSITION labelPosition = [[markDef objectForKey:@"position"] integerValue];
+    LabelAligment labelAlignment = [[markDef objectForKey:@"alignment"] integerValue];
+    LabelPosition labelPosition = [[markDef objectForKey:@"position"] integerValue];
     if([markDef objectForKey:@"cutoutRadius"]) {
         self.cutoutRadius = [[markDef objectForKey:@"cutoutRadius"] floatValue];
     } else {
@@ -233,13 +233,10 @@ static const BOOL kEnableSkipButton = YES;
         [self addSubview:currentView];
     }
     
-    
-    
     BOOL showArrow = YES;
     if( [markDef objectForKey:@"showArrow"]) {
         showArrow = [[markDef objectForKey:@"showArrow"] boolValue];
     }
-    
     
     // Delegate (coachMarksView:willNavigateTo:atIndex:)
     if ([self.delegate respondsToSelector:@selector(coachMarksView:willNavigateToIndex:)]) {
@@ -255,23 +252,23 @@ static const BOOL kEnableSkipButton = YES;
     CGFloat x;
     [self.arrowImage removeFromSuperview];
     switch (labelAlignment) {
-        case WS_LABEL_ALIGNMENT_RIGHT:
-            x =floorf(self.bounds.size.width - self.lblCaption.frame.size.width - kLabelMargin);
+        case LABEL_ALIGNMENT_RIGHT:
+            x = floorf(self.bounds.size.width - self.lblCaption.frame.size.width - kLabelMargin);
             break;
-        case WS_LABEL_ALIGNMENT_LEFT:
+        case LABEL_ALIGNMENT_LEFT:
             x = kLabelMargin;
             break;
         default:
-            x =floorf((self.bounds.size.width - self.lblCaption.frame.size.width) / 2.0f);
+            x = floorf((self.bounds.size.width - self.lblCaption.frame.size.width) / 2.0f);
             break;
     }
     
     switch (labelPosition) {
-        case WS_LABEL_POSITION_TOP:
+        case LABEL_POSITION_TOP:
         {
             y = markRect.origin.y - self.lblCaption.frame.size.height - kLabelMargin;
             if(showArrow) {
-                self.arrowImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow-bottom.png"]];
+                self.arrowImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow-bottom"]];
                 CGRect imageViewFrame = self.arrowImage.frame;
                 imageViewFrame.origin.x = x;
                 imageViewFrame.origin.y = y;
@@ -281,12 +278,12 @@ static const BOOL kEnableSkipButton = YES;
             }
         }
             break;
-        case WS_LABEL_POSITION_LEFT:
+        case LABEL_POSITION_LEFT:
         {
             y = markRect.origin.y + markRect.size.height/2 - self.lblCaption.frame.size.height/2;
             x = self.bounds.size.width - self.lblCaption.frame.size.width - kLabelMargin - markRect.size.width;
             if(showArrow) {
-                self.arrowImage= [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow-right.png"]];
+                self.arrowImage= [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow-right"]];
                 CGRect imageViewFrame = self.arrowImage.frame;
                 imageViewFrame.origin.x = self.bounds.size.width - self.arrowImage.frame.size.width - kLabelMargin - markRect.size.width;
                 imageViewFrame.origin.y = y + self.lblCaption.frame.size.height/2 - imageViewFrame.size.height/2;
@@ -296,7 +293,7 @@ static const BOOL kEnableSkipButton = YES;
             }
         }
             break;
-        case WS_LABEL_POSITION_RIGHT:
+        case LABEL_POSITION_RIGHT:
         {
             y = markRect.origin.y + markRect.size.height/2 - self.lblCaption.frame.size.height/2;
             x = markRect.origin.x + markRect.size.width + kLabelMargin;
@@ -305,7 +302,7 @@ static const BOOL kEnableSkipButton = YES;
             }
         }
             break;
-        case WS_LABEL_POSITION_RIGHT_BOTTOM:
+        case LABEL_POSITION_RIGHT_BOTTOM:
         {
             y = markRect.origin.y + markRect.size.height + self.lblSpacing;
             CGFloat bottomY = y + self.lblCaption.frame.size.height + self.lblSpacing;
@@ -314,7 +311,7 @@ static const BOOL kEnableSkipButton = YES;
             }
             x = markRect.origin.x + markRect.size.width + kLabelMargin;
             if(showArrow) {
-                self.arrowImage= [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow-top.png"]];
+                self.arrowImage= [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow-top"]];
                 CGRect imageViewFrame = self.arrowImage.frame;
                 imageViewFrame.origin.x = x - markRect.size.width/2 - imageViewFrame.size.width/2;
                 imageViewFrame.origin.y = y - kLabelMargin; //self.lblCaption.frame.size.height/2
@@ -331,7 +328,7 @@ static const BOOL kEnableSkipButton = YES;
                 y = markRect.origin.y - self.lblSpacing - self.lblCaption.frame.size.height;
             }
             if(showArrow) {
-                self.arrowImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow-top.png"]];
+                self.arrowImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow-top"]];
                 CGRect imageViewFrame = self.arrowImage.frame;
                 imageViewFrame.origin.x = x;
                 imageViewFrame.origin.y = y;
