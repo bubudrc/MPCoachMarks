@@ -37,6 +37,21 @@
     #endif
 #endif
 
+
+typedef enum {
+    WS_LABEL_ALIGNMENT_CENTER,
+    WS_LABEL_ALIGNMENT_LEFT,
+    WS_LABEL_ALIGNMENT_RIGHT,
+} WS_LABEL_ALIGNMENT;
+
+typedef enum {
+    WS_LABEL_POSITION_BOTTOM,
+    WS_LABEL_POSITION_LEFT,
+    WS_LABEL_POSITION_TOP,
+    WS_LABEL_POSITION_RIGHT,
+    WS_LABEL_POSITION_RIGHT_BOTTOM
+} WS_LABEL_POSITION;
+
 @protocol MPCoachMarksViewDelegate;
 
 @interface MPCoachMarks : UIView
@@ -53,6 +68,7 @@
 @property (nonatomic) CGFloat lblSpacing;
 @property (nonatomic) BOOL enableContinueLabel;
 @property (nonatomic) BOOL enableSkipButton;
+@property (nonatomic, strong) UIImageView *arrowImage;
 
 - (id)initWithFrame:(CGRect)frame coachMarks:(NSArray *)marks;
 - (void)start;
@@ -66,5 +82,6 @@
 - (void)coachMarksView:(MPCoachMarks *)coachMarksView didNavigateToIndex:(NSUInteger)index;
 - (void)coachMarksViewWillCleanup:(MPCoachMarks *)coachMarksView;
 - (void)coachMarksViewDidCleanup:(MPCoachMarks *)coachMarksView;
+- (void)coachMarksViewDidClicked:(MPCoachMarks *)coachMarksView atIndex:(NSInteger)index;
 
 @end
