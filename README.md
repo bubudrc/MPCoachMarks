@@ -121,7 +121,8 @@ You can use 3 differents types of shape:
 * DEFAULT (or empty)
 * SHAPE_CIRCLE
 * SHAPE_SQUARE 
-(Square with borders rounded it's DEFAULT)
+
+_(Square with borders rounded it's DEFAULT)_
 
 ### `position` (LabelAligment)
 
@@ -131,7 +132,8 @@ You can use 5 differents position of caption label:
 * LABEL_POSITION_TOP
 * LABEL_POSITION_RIGHT
 * LABEL_POSITION_RIGHT_BOTTOM
-(LABEL_POSITION_BOTTOM it's default)
+
+_(LABEL_POSITION_BOTTOM it's default)_
 
 ### `alignment` (LabelAligment)
 
@@ -139,12 +141,13 @@ You can use 3 differents types of shape:
 * LABEL_ALIGNMENT_CENTER (or empty)
 * LABEL_ALIGNMENT_LEFT
 * LABEL_ALIGNMENT_RIGHT
-(LABEL_ALIGNMENT_CENTER it's default)
+
+_(LABEL_ALIGNMENT_CENTER it's default)_
 
 ### `showArrow` (BOOL)
 
 You can show or hide arrow image
-(By default it's set NO)
+_(By default it's set NO)_
 
 ### `lblCaption` (UILabel)
 
