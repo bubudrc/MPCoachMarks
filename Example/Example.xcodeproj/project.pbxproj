@@ -450,6 +450,7 @@
 				8DD7C8F81B4DD7F6006764EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8DD7C8F91B4DD7F6006764EF /* Build configuration list for PBXNativeTarget "ExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +459,7 @@
 				8DD7C8FB1B4DD7F6006764EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
