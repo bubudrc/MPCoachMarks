@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "MPCoachMarks"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "MPCoachMarks is an iOS class that displays user coach marks with a couple of shapes"
   s.homepage     = "https://github.com/bubudrc/MPCoachMarks"
   s.screenshots  = "http://zippy.gfycat.com/DefiantTastyDogwoodtwigborer.gif"
