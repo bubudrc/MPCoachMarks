@@ -20,7 +20,9 @@ MPCoachMarks works on any iOS version and is built with ARC. It depends on the f
 
 [CocoaPods](http://cocoapods.org) is the recommended way to add MPCoachMarks to your project.
 
-
+1. Add a pod entry for WSCoachMarksView to your Podfile `pod 'MPCoachMarks'
+2. Install the pod(s) by running `pod install`.
+3. Include WSCoachMarksView wherever you need it with `#import "MPCoachMarks.h"`.
 
 ### Source files
 
