@@ -9,7 +9,8 @@ Pod::Spec.new do |s|
   s.author             = { "Marcelo Perretta" => "marcelo.perretta@gmail.com" }
   s.platform     = :ios
   s.source       = { :git => "https://github.com/bubudrc/MPCoachMarks.git", :tag => s.version }
-  s.source_files  = "MPCoachMarks"
+  s.source_files  = "MPCoachMarks/**/*.{h,m}"
+  s.resources = ["arrows/*.png"]
   s.frameworks = "QuartzCore", "CoreGraphics"
   s.requires_arc = true
 end
