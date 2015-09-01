@@ -198,6 +198,16 @@ static const BOOL kEnableSkipButton = YES;
     [self cleanup];
 }
 
+- (UIImage*)fetchImage:(NSString*)name {
+    // Check for iOS 8
+    if ([UIImage respondsToSelector:@selector(imageNamed:inBundle:compatibleWithTraitCollection:)]) {
+        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+        return [UIImage imageNamed:name inBundle:bundle compatibleWithTraitCollection:nil];
+    } else {
+        return [UIImage imageNamed:name];
+    }
+}
+
 - (void)goToCoachMarkIndexed:(NSUInteger)index {
     // Out of bounds
     if (index >= self.coachMarks.count) {
@@ -273,7 +283,7 @@ static const BOOL kEnableSkipButton = YES;
         {
             y = markRect.origin.y - self.lblCaption.frame.size.height - kLabelMargin;
             if(showArrow) {
-                self.arrowImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow-bottom"]];
+                self.arrowImage = [[UIImageView alloc] initWithImage:[self fetchImage:@"arrow-down"]];
                 CGRect imageViewFrame = self.arrowImage.frame;
                 imageViewFrame.origin.x = x;
                 imageViewFrame.origin.y = y;
@@ -288,7 +298,7 @@ static const BOOL kEnableSkipButton = YES;
             y = markRect.origin.y + markRect.size.height/2 - self.lblCaption.frame.size.height/2;
             x = self.bounds.size.width - self.lblCaption.frame.size.width - kLabelMargin - markRect.size.width;
             if(showArrow) {
-                self.arrowImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow-right"]];
+                self.arrowImage = [[UIImageView alloc] initWithImage:[self fetchImage:@"arrow-right"]];
                 CGRect imageViewFrame = self.arrowImage.frame;
                 imageViewFrame.origin.x = self.bounds.size.width - self.arrowImage.frame.size.width - kLabelMargin - markRect.size.width;
                 imageViewFrame.origin.y = y + self.lblCaption.frame.size.height/2 - imageViewFrame.size.height/2;
@@ -316,7 +326,7 @@ static const BOOL kEnableSkipButton = YES;
             }
             x = markRect.origin.x + markRect.size.width + kLabelMargin;
             if(showArrow) {
-                self.arrowImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow-top"]];
+                self.arrowImage = [[UIImageView alloc] initWithImage:[self fetchImage:@"arrow-top"]];
                 CGRect imageViewFrame = self.arrowImage.frame;
                 imageViewFrame.origin.x = x - markRect.size.width/2 - imageViewFrame.size.width/2;
                 imageViewFrame.origin.y = y - kLabelMargin; //self.lblCaption.frame.size.height/2
@@ -333,7 +343,7 @@ static const BOOL kEnableSkipButton = YES;
                 y = markRect.origin.y - self.lblSpacing - self.lblCaption.frame.size.height;
             }
             if(showArrow) {
-                self.arrowImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow-top"]];
+                self.arrowImage = [[UIImageView alloc] initWithImage:[self fetchImage:@"arrow-top"]];
                 CGRect imageViewFrame = self.arrowImage.frame;
                 imageViewFrame.origin.x = x;
                 imageViewFrame.origin.y = y;
