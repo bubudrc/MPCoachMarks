@@ -17,6 +17,8 @@ static const CGFloat kLabelMargin = 5.0f;
 static const CGFloat kMaskAlpha = 0.75f;
 static const BOOL kEnableContinueLabel = YES;
 static const BOOL kEnableSkipButton = YES;
+static const NSString *kSkipButtonText = @"Skip";
+static const NSString *kContinueLabelText = @"Tap to continue";
 
 @implementation MPCoachMarks {
     CAShapeLayer *mask;
@@ -38,6 +40,8 @@ static const BOOL kEnableSkipButton = YES;
 @synthesize lblSpacing;
 @synthesize enableContinueLabel;
 @synthesize enableSkipButton;
+@synthesize continueLabelText;
+@synthesize skipButtonText;
 @synthesize arrowImage;
 @synthesize continueLocation;
 
@@ -81,6 +85,8 @@ static const BOOL kEnableSkipButton = YES;
     self.lblSpacing = kLblSpacing;
     self.enableContinueLabel = kEnableContinueLabel;
     self.enableSkipButton = kEnableSkipButton;
+    self.continueLabelText = kContinueLabelText;
+    self.skipButtonText = kSkipButtonText;
     
     // Shape layer mask
     mask = [CAShapeLayer layer];
@@ -386,7 +392,7 @@ static const BOOL kEnableSkipButton = YES;
             lblContinue = [[UILabel alloc] initWithFrame:(CGRect){{0, [self yOriginForContinueLabel]}, {lblContinueWidth, 30.0f}}];
             lblContinue.font = [UIFont boldSystemFontOfSize:13.0f];
             lblContinue.textAlignment = NSTextAlignmentCenter;
-            lblContinue.text = @"Tap to continue";
+            lblContinue.text = self.continueLabelText;
             lblContinue.alpha = 0.0f;
             lblContinue.backgroundColor = [UIColor whiteColor];
             [self addSubview:lblContinue];
@@ -403,7 +409,7 @@ static const BOOL kEnableSkipButton = YES;
     if (self.enableSkipButton) {
         btnSkipCoach = [[UIButton alloc] initWithFrame:(CGRect){{lblContinueWidth, [self yOriginForContinueLabel]}, {btnSkipWidth, 30.0f}}];
         [btnSkipCoach addTarget:self action:@selector(skipCoach) forControlEvents:UIControlEventTouchUpInside];
-        [btnSkipCoach setTitle:@"Skip" forState:UIControlStateNormal];
+        [btnSkipCoach setTitle:self.skipButtonText forState:UIControlStateNormal];
         btnSkipCoach.titleLabel.font = [UIFont boldSystemFontOfSize:13.0f];
         btnSkipCoach.alpha = 0.0f;
         btnSkipCoach.tintColor = [UIColor whiteColor];
