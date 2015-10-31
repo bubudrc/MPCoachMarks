@@ -17,8 +17,8 @@ static const CGFloat kLabelMargin = 5.0f;
 static const CGFloat kMaskAlpha = 0.75f;
 static const BOOL kEnableContinueLabel = YES;
 static const BOOL kEnableSkipButton = YES;
-static const NSString *kSkipButtonText = @"Skip";
-static const NSString *kContinueLabelText = @"Tap to continue";
+NSString *const kSkipButtonText = @"Skip";
+NSString *const kContinueLabelText = @"Tap to continue";
 
 @implementation MPCoachMarks {
     CAShapeLayer *mask;
