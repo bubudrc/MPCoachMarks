@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/bubudrc/MPCoachMarks.git", :tag => s.version }
   s.source_files  = "MPCoachMarks/**/*.{h,m}"
   s.resources = ["MPCoachMarks/arrows/*.png"]
-  s.frameworks = "QuartzCore", "CoreGraphics"
+  s.frameworks = "CoreGraphics", "QuartzCore"
   s.requires_arc = true
 end
