@@ -16,7 +16,7 @@ MPCoachMarks works on any iOS version and is built with ARC. It depends on the f
 
 ## Adding MPCoachMarks to your project
 
-### Cocoapods
+### CocoaPods
 
 [CocoaPods](http://cocoapods.org) is the recommended way to add MPCoachMarks to your project.
 
