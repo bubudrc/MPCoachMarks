@@ -196,6 +196,9 @@ NSString *const kContinueLabelText = @"Tap to continue";
 }
 
 - (void)skipCoach {
+    if ([self.delegate respondsToSelector:@selector(coachMarksViewSkipButtonClicked:)]) {
+        [self.delegate coachMarksViewSkipButtonClicked:self];
+    }
     [self goToCoachMarkIndexed:self.coachMarks.count];
 }
 
