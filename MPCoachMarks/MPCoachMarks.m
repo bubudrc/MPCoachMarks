@@ -413,7 +413,7 @@ NSString *const kContinueLabelText = @"Tap to continue";
         }
     }
     
-    if (self.enableSkipButton) {
+    if (self.enableSkipButton && markIndex == 0) {
         btnSkipCoach = [[UIButton alloc] initWithFrame:(CGRect){{lblContinueWidth, [self yOriginForContinueLabel]}, {btnSkipWidth, 30.0f}}];
         [btnSkipCoach addTarget:self action:@selector(skipCoach) forControlEvents:UIControlEventTouchUpInside];
         [btnSkipCoach setTitle:self.skipButtonText forState:UIControlStateNormal];
