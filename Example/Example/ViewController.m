@@ -25,8 +25,15 @@
 -(void) showTutorial{
     
     CGRect coachmark1 = CGRectMake(([UIScreen mainScreen].bounds.size.width - 125) / 2, 64, 125, 125);
-    CGRect coachmark2 = CGRectMake(([UIScreen mainScreen].bounds.size.width - 300) / 2, coachmark1.origin.y + coachmark1.size.height, 300, 80);
     CGRect coachmark3 = CGRectMake(2, 20, 45, 45);
+    
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone && UIScreen.mainScreen.nativeBounds.size.height == 2436)  {
+        //iPhone X
+        coachmark1 = CGRectMake(([UIScreen mainScreen].bounds.size.width - 125) / 2, 86, 125, 125);
+        coachmark3 = CGRectMake(2, 40, 45, 45);
+    }
+
+    CGRect coachmark2 = CGRectMake(([UIScreen mainScreen].bounds.size.width - 300) / 2, coachmark1.origin.y + coachmark1.size.height, 300, 80);
     
     // Setup coach marks
     NSArray *coachMarks = @[
