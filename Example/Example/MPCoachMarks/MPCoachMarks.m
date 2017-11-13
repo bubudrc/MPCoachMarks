@@ -20,6 +20,12 @@ static const BOOL kEnableSkipButton = YES;
 NSString *const kSkipButtonText = @"Skip";
 NSString *const kContinueLabelText = @"Tap to continue";
 
+@interface MPCoachMarks()
+#ifdef __IPHONE_11_0
+-(UIEdgeInsets)getSafeAreaInsets;
+#endif
+@end
+
 @implementation MPCoachMarks {
     CAShapeLayer *mask;
     NSUInteger markIndex;
@@ -421,15 +427,41 @@ NSString *const kContinueLabelText = @"Tap to continue";
 }
 
 - (CGFloat)yOriginForContinueLabel {
+    float topOffset = 20.0f;
+    float bottomOffset = 30.f;
+
+#ifdef __IPHONE_11_0
+    UIEdgeInsets safeInsets = [self getSafeAreaInsets];
+    topOffset += safeInsets.top;
+    bottomOffset += safeInsets.bottom;
+#endif
+
     switch (self.continueLocation) {
         case LOCATION_TOP:
-            return 20.0f;
+            return topOffset;
         case LOCATION_CENTER:
             return self.bounds.size.height / 2 - 15.0f;
         default:
-            return self.bounds.size.height - 30.0f;
+            return self.bounds.size.height - bottomOffset;
     }
 }
+
+#ifdef __IPHONE_11_0
+-(UIEdgeInsets)getSafeAreaInsets {
+    UIEdgeInsets safeInsets = { .top = 0, .bottom = 0, .left = 0, .right = 0 };
+    SEL selector = @selector(safeAreaInsets);
+    if ([self respondsToSelector:selector])
+    {
+        NSInvocation* invocation = [NSInvocation invocationWithMethodSignature:[self methodSignatureForSelector:selector]];
+        invocation.selector = selector;
+        invocation.target = self;
+        [invocation invoke];
+
+        [invocation getReturnValue:&safeInsets];
+    }
+    return safeInsets;
+}
+#endif
 
 #pragma mark - Cleanup
 
