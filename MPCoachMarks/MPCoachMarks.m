@@ -349,6 +349,26 @@ NSString *const kContinueLabelText = @"Tap to continue";
             }
         }
             break;
+        case LABEL_POSITION_LEFT_BOTTOM:
+        {
+            y = markRect.origin.y + markRect.size.height + self.lblSpacing;
+            CGFloat bottomY = y + self.lblCaption.frame.size.height + self.lblSpacing;
+            if (bottomY > self.bounds.size.height) {
+                y = markRect.origin.y - self.lblSpacing - self.lblCaption.frame.size.height;
+            }
+            CGFloat xArrow = markRect.origin.x + markRect.size.width + kLabelMargin; // Arrow to the right
+            x = markRect.origin.x + markRect.size.width + kLabelMargin - self.lblCaption.frame.size.width - 60.0f; // Text to the left (- 60.0f to not override arrow image)
+            if(showArrow) {
+                self.arrowImage = [[UIImageView alloc] initWithImage:[self fetchImage:@"arrow-top-left"]];
+                CGRect imageViewFrame = self.arrowImage.frame;
+                imageViewFrame.origin.x = xArrow - markRect.size.width/2 - imageViewFrame.size.width/2;
+                imageViewFrame.origin.y = y - kLabelMargin; //self.lblCaption.frame.size.height/2
+                y += imageViewFrame.size.height/2;
+                self.arrowImage.frame = imageViewFrame;
+                [self addSubview:self.arrowImage];
+            }
+        }
+            break;
         default: {
             y = markRect.origin.y + markRect.size.height + self.lblSpacing;
             CGFloat bottomY = y + self.lblCaption.frame.size.height + self.lblSpacing;
